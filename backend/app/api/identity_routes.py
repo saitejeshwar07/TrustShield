@@ -59,4 +59,5 @@ def evaluate(
         "trust_score": result["trust_score"],
         "risk": result["risk"],
         "decision": result["decision"],
+        "ai_prediction": result["ai_prediction"],
     }

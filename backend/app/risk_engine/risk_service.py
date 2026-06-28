@@ -1,5 +1,8 @@
+from datetime import datetime
+
 from app.risk_engine.risk_rules import *
 from app.risk_engine.trust_score import calculate_trust_score
+from app.ai.predict import predict_login
 
 
 def evaluate_login(
@@ -11,9 +14,24 @@ def evaluate_login(
     failed_attempts=0,
     trusted_device=False,
 ):
-
     risk = 0
 
+    # Get current login hour
+    current_hour = datetime.now().hour
+
+    # AI Prediction
+    ai_result = predict_login(
+        new_device=new_device,
+        new_browser=new_browser,
+        new_ip=new_ip,
+        login_hour=current_hour,
+    )
+
+    # Increase risk if AI detects anomaly
+    if ai_result == "ANOMALY":
+        risk += 20
+
+    # Rule-Based Risk Engine
     if new_device:
         risk += NEW_DEVICE
 
@@ -35,14 +53,14 @@ def evaluate_login(
     if trusted_device:
         risk += TRUSTED_DEVICE
 
+    # Calculate Trust Score
     trust_score = calculate_trust_score(risk)
 
+    # Final Decision
     if trust_score >= 80:
         decision = "ALLOW"
-
     elif trust_score >= 50:
         decision = "STEP_UP_AUTH"
-
     else:
         decision = "BLOCK"
 
@@ -50,4 +68,6 @@ def evaluate_login(
         "risk": risk,
         "trust_score": trust_score,
         "decision": decision,
+        "ai_prediction": ai_result,
+        "login_hour": current_hour,
     }

@@ -8,6 +8,7 @@ import DeviceCard from "../components/DeviceCard";
 import DecisionCard from "../components/DecisionCard";
 import RiskCard from "../components/RiskCard";
 import RecentLogins from "../components/RecentLogins";
+import AICard from "../components/AICard";
 
 import { getDashboardSummary } from "../services/dashboard";
 
@@ -65,6 +66,10 @@ function Dashboard() {
 
             <RiskCard risk={summary.risk} />
             <RecentLogins />
+            <AICard
+  prediction={summary.ai_prediction}
+  model={summary.model}
+/>
           </div>
         </main>
       </div>
