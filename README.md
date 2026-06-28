@@ -2,9 +2,7 @@
 
 ### AI-Powered Continuous Identity Trust & Risk-Based Authentication Platform for Digital Banking
 
-<p align="center">
-  <img src="assets/banner.png" alt="TrustShield AI Banner" width="100%">
-</p>
+
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue)
 ![FastAPI](https://img.shields.io/badge/FastAPI-Backend-green)
