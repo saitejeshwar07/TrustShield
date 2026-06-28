@@ -1,318 +1,254 @@
-# 🛡️ TrustShield AI
+🚀 TrustShield AI
 
-### AI-Powered Continuous Identity Trust & Risk-Based Authentication Platform for Digital Banking
+AI-Powered Identity Trust & Adaptive Authentication Platform
 
+TrustShield AI is a production-inspired identity security platform that combines rule-based risk analysis with AI-powered anomaly detection to evaluate login attempts in real time. It continuously analyzes user behavior, device intelligence, browser information, IP changes, and login history to generate a Trust Score and determine whether a login should be Allowed, require Step-Up Authentication, or be Blocked.
 
-
-![Python](https://img.shields.io/badge/Python-3.11-blue)
-![FastAPI](https://img.shields.io/badge/FastAPI-Backend-green)
-![React](https://img.shields.io/badge/React-Frontend-61DAFB)
-![License](https://img.shields.io/badge/License-MIT-yellow)
-![Status](https://img.shields.io/badge/Status-In%20Development-orange)
-
----
-
-## 📌 Overview
-
-**TrustShield AI** is an AI-powered **Identity Trust Platform** that enables banks to continuously verify customer and employee identities using real-time risk analysis.
-
-Traditional banking systems rely heavily on static authentication methods such as passwords and OTPs. While these methods provide an initial layer of security, they cannot effectively detect modern cyber threats like account takeover, identity fraud, suspicious account recovery, insider misuse, or logins from compromised devices.
-
-TrustShield AI introduces **Continuous Identity Verification**, where every login, transaction, and sensitive action is evaluated using behavioral analytics, device intelligence, and contextual information. Instead of treating every login equally, the platform dynamically calculates a **Trust Score** and performs additional verification only when the calculated risk is elevated.
-
-This approach significantly improves security while minimizing unnecessary authentication challenges for genuine users.
-
----
-
-# 🎯 Problem Statement
-
-Digital banking platforms face increasing threats from sophisticated cyber attacks including:
-
-* Account Takeover (ATO)
-* Identity Fraud
-* KYC Fraud
-* Suspicious Account Recovery
-* Insider Threats
-* Privileged Access Misuse
-* New Device Logins
-* Behavioral Anomalies
-
-Traditional authentication mechanisms cannot accurately distinguish legitimate users from attackers after the initial login.
-
-TrustShield AI solves this problem by continuously monitoring user identity throughout the banking session.
-
----
-
-# 💡 Our Solution
-
-TrustShield AI continuously collects multiple security signals during every interaction.
-
-These include:
-
-* 📱 Device Information
-* 🌍 Location & IP Address
-* ⌨️ Typing Patterns
-* 🖱️ Mouse Movement
-* 🕒 Login Time
-* 📊 User Login History
-* 💳 Transaction Behavior
-* 🔐 Authentication History
-
-These signals are processed by an **AI Risk Engine** which generates a **Trust Score (0–100)**.
-
-Depending on the calculated score:
-
-🟢 **Low Risk**
-
-* Login approved instantly.
-
-🟡 **Medium Risk**
-
-* Step-up authentication (OTP / Biometric Verification).
-
-🔴 **High Risk**
-
-* Login blocked.
-* Security team notified.
-* Fraud investigation initiated.
-
----
-
-# ✨ Key Features
-
-* 🔒 Continuous Identity Verification
-* 🤖 AI-Powered Risk Scoring
-* 📱 Device Fingerprinting
-* 🧠 Behavioral Analytics
-* 🚨 Fraud Detection & Prevention
-* 🔑 Risk-Based Authentication
-* 📊 Real-Time Admin Dashboard
-* 📈 Risk Score Monitoring
-* 🔍 Insider Threat Detection
-* 🌐 Multi-Channel Banking Support
-* 🔐 Privacy-First Architecture
-
----
-
-# 🏗️ System Architecture
-
-```
-                        User / Employee
-                               │
-                               ▼
-                     Login / Transaction
-                               │
-                               ▼
-                    Authentication Gateway
-                               │
-        ┌──────────────────────┼──────────────────────┐
-        │                      │                      │
-        ▼                      ▼                      ▼
- Device Intelligence   Behavioral Analysis     User History
-        │                      │                      │
-        └───────────────┬──────┴──────────────┬──────┘
-                        ▼
-               Feature Engineering Layer
-                        │
-                        ▼
-                 AI Risk Scoring Engine
-                        │
-                 Trust Score (0–100)
-                        │
-        ┌───────────────┼──────────────────┐
-        ▼               ▼                  ▼
-   Low Risk        Medium Risk        High Risk
-   Allow Login      OTP / MFA       Block & Alert
-                        │
-                        ▼
-             Admin Dashboard & Monitoring
-```
-
----
-
-# ⚙️ Workflow
-
-### Step 1 — User Authentication
-
-The user logs into the banking application using their credentials.
-
-↓
-
-### Step 2 — Context Collection
-
-The system securely collects:
-
-* Device fingerprint
-* Browser information
-* IP address
-* Geolocation
-* Login time
-* User behavior
-* Login history
-
-↓
-
-### Step 3 — Feature Engineering
-
-Collected data is cleaned, normalized, and converted into machine-learning features.
-
-↓
-
-### Step 4 — AI Risk Analysis
-
-The Risk Engine evaluates all signals and generates a Trust Score.
-
-↓
-
-### Step 5 — Decision Engine
-
-| Trust Score | Action                        |
-| ----------- | ----------------------------- |
-| 0–30        | Allow Login                   |
-| 31–70       | OTP / Biometric Verification  |
-| 71–100      | Block Access & Alert Security |
-
-↓
-
-### Step 6 — Monitoring Dashboard
-
-Security administrators receive real-time alerts, analytics, and investigation reports.
-
----
-
-# 🧠 AI Pipeline
-
-```
+✨ Features
+🔐 Secure Authentication
+JWT Authentication
+Secure Password Hashing
+User Registration & Login
+Protected API Endpoints
+🖥 Device Intelligence
+Device Fingerprinting
+Trusted Device Detection
+Browser Detection
+Operating System Detection
+Screen Resolution Detection
+Timezone Detection
+Language Detection
+IP Address Tracking
+🧠 AI-Powered Risk Engine
+Rule-Based Risk Analysis
+Isolation Forest Anomaly Detection
+Dynamic Trust Score Calculation
+AI Prediction (Normal / Anomaly)
+Adaptive Authentication Decisions
+📊 Security Dashboard
+Trust Score
+Risk Score
+AI Detection
+Current Device
+Decision Engine
+Recent Login Activity
+📜 Login History
+Login Tracking
+Browser History
+Device History
+Risk History
+Trust Score History
+🏗 System Architecture
+                     React Frontend
+                           │
+                           ▼
+                  FastAPI REST API
+                           │
+        ┌──────────────────┼──────────────────┐
+        ▼                  ▼                  ▼
+ Authentication      Identity Engine    Dashboard APIs
+        │                  │                  │
+        └──────────────────┼──────────────────┘
+                           ▼
+                  Rule-Based Risk Engine
+                           │
+                           ▼
+             Isolation Forest AI Model
+                           │
+                           ▼
+                  Trust Score Engine
+                           │
+                           ▼
+                 Supabase PostgreSQL
+🤖 AI Pipeline
 User Login
-      │
-      ▼
-Collect Security Signals
-      │
-      ▼
-Feature Engineering
-      │
-      ▼
-Machine Learning Risk Prediction
-      │
-      ▼
-Trust Score Generation
-      │
-      ▼
-Risk-Based Decision Engine
-      │
-      ▼
-Allow │ Verify │ Block
-      │
-      ▼
-Dashboard & Logging
-```
+     │
+     ▼
+Collect Device Information
+     │
+     ▼
+Browser Detection
+     │
+     ▼
+IP Detection
+     │
+     ▼
+Rule-Based Risk Engine
+     │
+     ▼
+Isolation Forest AI
+     │
+     ▼
+AI Prediction
+     │
+     ▼
+Trust Score
+     │
+     ▼
+ALLOW / STEP_UP_AUTH / BLOCK
+📸 Dashboard
+Login
+Secure Login
+JWT Authentication
+Responsive UI
+Dashboard
+Trust Score
+Risk Score
+AI Detection
+Current Device
+Decision Card
+Recent Login History
+AI Detection
 
----
+The platform uses Isolation Forest to classify login attempts as:
 
-# 🛠️ Technology Stack
+✅ NORMAL
+⚠️ ANOMALY
+🧠 Risk Engine
 
-## Frontend
+Current Risk Factors:
 
-* React.js
-* Tailwind CSS
-* Chart.js
+Risk Factor	Score
+New Device	+30
+New Browser	+10
+New IP Address	+20
+New Country	+25
+Unusual Login Time	+15
+Multiple Failed Attempts	+40
+Trusted Device	-20
+🛠 Tech Stack
+Frontend
+React 19
+Vite
+Tailwind CSS
+React Router
+Axios
+Framer Motion
+Lucide React
+Backend
+FastAPI
+SQLAlchemy
+JWT Authentication
+Passlib
+Uvicorn
+Database
+Supabase PostgreSQL
+Artificial Intelligence
+Scikit-learn
+Isolation Forest
+Pandas
+Joblib
+📂 Project Structure
+TrustShield/
 
-## Backend
+├── backend/
+│
+│   ├── app/
+│   │
+│   ├── ai/
+│   │   ├── generate_dataset.py
+│   │   ├── train_model.py
+│   │   ├── predict.py
+│   │   └── model.pkl
+│   │
+│   ├── api/
+│   ├── core/
+│   ├── database/
+│   ├── models/
+│   ├── risk_engine/
+│   ├── schemas/
+│   ├── services/
+│   └── main.py
+│
+├── frontend/
+│
+│   ├── src/
+│   │
+│   ├── components/
+│   ├── pages/
+│   ├── services/
+│   ├── hooks/
+│   └── App.jsx
+│
+├── docs/
+└── README.md
+🚀 Installation
+Backend
+git clone https://github.com/<your-username>/TrustShield.git
 
-* FastAPI
-* Python
-* Uvicorn
+cd TrustShield/backend
 
-## Machine Learning
+python -m venv venv
 
-* Scikit-learn
-* Isolation Forest
-* Random Forest
-* Pandas
-* NumPy
-* Joblib
+venv\Scripts\activate
 
-## Database
+pip install -r requirements.txt
 
-* PostgreSQL
-* Redis
+uvicorn app.main:app --reload
 
-## Authentication
+Backend runs on:
 
-* JWT
-* bcrypt
-* PyOTP
+http://127.0.0.1:8000
 
-## Device Trust
+Swagger:
 
-* FingerprintJS
-* Browser APIs
+http://127.0.0.1:8000/docs
+Frontend
+cd frontend
 
-## Deployment
+npm install
 
-* Vercel
-* Render
-* Supabase PostgreSQL
+npm run dev
 
-## Development Tools
+Runs on:
 
-* Git
-* GitHub
-* VS Code
-* Postman
+http://localhost:5173
+🔌 API Endpoints
+Method	Endpoint	Description
+POST	/api/auth/register	Register User
+POST	/api/auth/login	Login User
+POST	/api/device/register	Register Device
+POST	/api/identity/evaluate	Evaluate Login Risk
+GET	/api/dashboard/summary	Dashboard Summary
+GET	/api/dashboard/recent-logins	Login History
+📊 AI Model
 
----
+Algorithm:
 
-# 📂 Project Structure
+Isolation Forest
 
-```
-TrustShield-AI/
+Features Used:
 
-frontend/
-│── src/
-│── components/
-│── pages/
-│── assets/
+New Device
+New Browser
+New IP Address
+Login Hour
 
-backend/
-│── api/
-│── auth/
-│── risk_engine/
-│── services/
-│── database/
+Output:
 
-ml/
-│── models/
-│── dataset/
-│── train.py
-│── predict.py
+NORMAL
 
-docs/
-│── architecture.png
-│── workflow.png
+or
 
-README.md
-```
+ANOMALY
+🎯 Future Roadmap
+Browser Fingerprinting
+Geolocation Intelligence
+Timezone-Based Risk Detection
+Behavioral Biometrics
+Real-Time Security Alerts
+Admin Security Dashboard
+Live Risk Analytics
+Multi-Factor Authentication
+Explainable AI (XAI)
+Cloud Deployment
+👨‍💻 Author
 
----
+Pawar Sai Tejeshwar
 
-# 🔮 Future Enhancements
+B.Tech, Chemical Engineering
+IIT Gandhinagar
+📄 License
 
-* Explainable AI (XAI)
-* Federated Learning
-* Face Verification
-* Voice Biometrics
-* Graph-Based Fraud Detection
-* SIEM Integration
-* Real-Time Streaming Analytics
-* Mobile SDK Integration
+This project is released under the MIT License.
 
----
-
-# 👥 Team
-
-Developed as part of the **PSB Hackathon 2026** to build a privacy-first, AI-powered identity trust framework for next-generation digital banking.
-
----
-
-## ⭐ If you like this project, consider giving it a star!
